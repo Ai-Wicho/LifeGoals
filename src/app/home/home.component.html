@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Administrar Metas</h2>
+
+    <div class="input-group">
+        <input type="text" [(ngModel)]="nuevaMetaTexto" placeholder="Ej: Ser un desarrollador web">
+        <button class="add-btn" (click)="agregarMeta()">Añadir Meta</button>
+    </div>
+
+    <hr>
+
+    <div class="list-container">
+        <h3>Tu lista de metas ( {{ misMetas.length }} )</h3>
+        <ul>
+            <li *ngFor="let m of misMetas">
+                <span>{{ m.meta }}</span>
+                <button class="delete-btn" (click)="borrarMeta(m.id)">Eliminar</button>
+            </li>
+        </ul>
+    </div>
+</div>
